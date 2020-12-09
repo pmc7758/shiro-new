@@ -3,24 +3,19 @@ package com.pang.filter;
 import com.pang.jwt.JwtToken;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.subject.Subject;
-import org.apache.shiro.subject.SubjectContext;
 import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
-import org.apache.shiro.web.mgt.DefaultWebSubjectFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import javax.servlet.Filter;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+
 
 
 /**
  * JwtFilter:jwt过滤器来作为shiro的过滤器
- *
  * @author pangjian
  * @date: 2020/10/16
  */

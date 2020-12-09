@@ -11,12 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Date;
 import java.util.Map;
 
-/**
- * JwtUtil:用来进行签名和效验Token
- *
- * @author zhangxiaoxiang
- * @date: 2019/07/12
- */
+
 @Slf4j
 public class JwtUtil {
     /**

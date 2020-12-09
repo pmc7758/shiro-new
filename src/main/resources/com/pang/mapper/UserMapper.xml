@@ -15,9 +15,51 @@
         select * from s_user
         where username=#{username}
     </select>
+
     <!--login-->
     <select id="login" parameterType="User" resultType="User">
         select * from s_user where
         username=#{username} and password=#{password}
     </select>
+
+    <!--save-->
+    <insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into s_user values (#{id}, #{username}, #{password})
+    </insert>
+
+    <!--update-->
+    <update id="update" parameterType="User">
+        update s_user set
+        username = #{username},
+        password = #{password}
+        where
+        id = #{id}
+    </update>
+
+    <!--findById-->
+    <select id="findById" parameterType="String" resultType="User">
+        select id, username, password
+        from s_user where id=#{id}
+    </select>
+
+    <!--查询总条数-->
+    <select id="findTotals" resultType="Integer">
+        select count(id) from s_user
+    </select>
+
+    <!--分页查询-->
+    <select id="findByPage" resultType="User">
+        select id, username, password
+        from s_user
+        order by id
+        limit #{start},#{rows}
+    </select>
+
+    <select id="queryUserByRole" resultType="User">
+        SELECT s_user.id,username,password FROM s_role
+        INNER JOIN s_user_role ON s_role.id = s_user_role.roleid
+        INNER JOIN s_user ON s_user.id = s_user_role.userid
+        WHERE role = #{role}
+    </select>
+
 </mapper>

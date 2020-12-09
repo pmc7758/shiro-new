@@ -39,7 +39,8 @@ public class ShiroConfig {
         // 配置不会被拦截的链接 顺序判断
         //前后端带login登录的或者其他登录的通通放行
         filterChainDefinitionMap.put("/user/login", "anon");
-        filterChainDefinitionMap.put("/user/login/test3","perms[sys:x:add]");
+        filterChainDefinitionMap.put("/user/register", "anon");
+        //filterChainDefinitionMap.put("/user/login/test3","perms[sys:x:add]");
         //filterChainDefinitionMap.put("/user/login/test2","roles[总经理]");
         //filterChainDefinitionMap.put("/user/login/test1","roles[总经理]");
         //filterChainDefinitionMap.put("/user/login/test1", "anon");
